@@ -1,41 +1,31 @@
-#include <stdio.h>
-
-int main() {
-    FILE *file;
-    int word_count = 0, char_count = 0, line_count = 0;
-    char filename[100], ch;
-
-    printf("Enter the filename: ");
-    scanf("%s", filename);
-
-    file = fopen(filename, "r");
-
-    if (file == NULL) {
-        printf("File not found.\n");
-        return 0;
-    }
-
-    while ((ch = fgetc(file)) != EOF) {
-        char_count++;
-
-        if (ch == ' ' || ch == '\n' || ch == '\t') {
-            word_count++;
-        }
-
-        if (ch == '\n') {
-            line_count++;
-        }
-    }
-
-    if (char_count > 0) {
-        word_count++;
-        line_count++;
-    }
-
-    printf("Word count: %d\n", word_count);
-    printf("Character count: %d\n", char_count);
-    printf("Line count: %d\n", line_count);
-
-    fclose(file);
-    return 0;
+%{
+int v=0;
+int c=0;
+%}
+%%
+[aeiouAEIOU] {v++;printf("\n %s is a vowel\n",yytext);}
+[a-zA-Z] {c++;printf("\n%s is a consonant\n",yytext);}
+%%
+int yywrap(void){}
+int main()
+{
+printf("\nenter : ");
+yylex();
+printf("\nvowels are:%d,""\nconsonants are:%d",v,c);
+return 0;
 }
+*********************************************************************************************************
+Output:
+C:\Users\harsh>set path=C:\Program Files (x86)\GnuWin32\bin
+C:\Users\harsh>flex vowelsandconso.l.txt
+C:\Users\harsh>set path=C:\MinGW\bin
+C:\Users\harsh>gcc lex.yy.c
+C:\Users\harsh>a
+enter : hihello
+h is a consonant
+i is a vowel
+h is a consonant
+e is a vowel
+l is a consonant
+l is a consonant
+o is a vowel
