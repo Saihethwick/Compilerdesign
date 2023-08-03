@@ -23,3 +23,15 @@ for(int i=0;i<l;i++){
 	}
 }
 }
+************************************************************************************************************************
+Output:
+enter the stringab+2+c+2d
+a is identifier
+b is identifier
++ is operator
+2 is digit
++ is operator
+c is identifier
++ is operator
+2 is digit
+d is identifier
