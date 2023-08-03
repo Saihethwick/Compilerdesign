@@ -23,4 +23,6 @@ C:\Users\punni>gcc lex.yy.c
 
 C:\Users\punni>a
 enter : http://google.com
-http://google.com
+valid url
+enter : http://ok.com
+invalid url
