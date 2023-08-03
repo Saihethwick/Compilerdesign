@@ -70,3 +70,17 @@ void  addToResult(char c)
             return;
    followResult[m++]=c;
 }
+********************************************************************************************************************
+Input :
+E  -> TR
+R  -> +T R| #
+T  -> F Y
+Y  -> *F Y | #
+F  -> (E) | i
+
+Output :
+Follow(E) = { $, ),  }
+Follow(R) = { $, ),  }
+Follow(T) = { +, $, ),  }
+Follow(Y) = { +, $, ),  }
+Follow(F) = { *, +, $, ),  }
