@@ -11,3 +11,9 @@ int main()
 		printf("\nnot a comment line");
 	}
 }
+*************************************************************************************************
+enter ://hello
+comment line
+
+enter :/well
+not a comment line
