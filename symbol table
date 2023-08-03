@@ -21,7 +21,7 @@ int main()
  {
   printf("%c",b[i]);
   i++;
- }
+}
  printf("\n Symbol Table\n");
  printf("Symbol \t addr \t type");
  while(j<=n)
@@ -44,7 +44,17 @@ int main()
     p=malloc(ch);
     add[x]=p;
     d[x]=ch;
-    printf("\n %c \t %d \t operator\n",ch,p);
+printf("\n %c \t %d \t operator\n",ch,p);
     x++;
-    j++;
-   }}}}
+    j++;
+   }
+  }
+ }
+}
+******************************************************************************************************************************
+Output:
+enter the stringa+b
+symbol  value   address  token
+a       10       6487456          identifier
++                6487457          operator
+b       5        6487458         identifier
