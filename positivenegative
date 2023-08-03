@@ -1,0 +1,34 @@
+%{
+#include <stdio.h>
+int posCount = 0, negCount = 0;
+%}
+
+%%
+
+\n      { printf("Positive numbers: %d, Negative numbers: %d\n", posCount, negCount); posCount = 0; negCount = 0; }
+-?[0-9]+ { if (atoi(yytext) < 0) ++negCount; else ++posCount; }
+
+%%
+
+int yywrap(void) {
+    return 1;
+}
+
+int main(void)
+{
+    yylex();
+    return 0;
+}
+*******************************************************************************************************************
+Output:
+C:\Users\harsh>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\harsh>flex posneg.l.txt
+
+C:\Users\harsh>set path=C:\MinGW\bin
+
+C:\Users\harsh>gcc lex.yy.c
+
+C:\Users\harsh>a
+3 4 -2 6 7
+    Positive numbers: 4, Negative numbers: 1
