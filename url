@@ -11,3 +11,16 @@ yylex();
 printf("\n");
 return 0;
 }
+******************************************************************************************************************************************************************
+output
+C:\Users\punni>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\punni>flex url.l.txt
+
+C:\Users\punni>set path=C:\MinGW\bin
+
+C:\Users\punni>gcc lex.yy.c
+
+C:\Users\punni>a
+enter : http://google.com
+http://google.com
