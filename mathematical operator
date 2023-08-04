@@ -1,0 +1,38 @@
+%{
+%}
+%%
+"+"|"-"|"/"|"||"|"&&"|"*"|"%"|"|"|"&"|"<"|">" printf("mathematical operator");
+.+ printf("not a mathematical operator");
+%%
+int yywrap(void){}
+int main()
+{
+printf("enter:");
+yylex();
+printf("\n");
+return 0;
+}
+******************************************************************************************************************
+Output:
+C:\Users\harsh>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\harsh>flex mathop.l.txt
+
+C:\Users\harsh>set path=C:\MinGW\bin
+
+C:\Users\harsh>gcc lex.yy.c
+C:\Users\harsh>a
+enter : +
+mathematical operator
+C:\Users\harsh>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\harsh>flex mathop.l.txt
+
+C:\Users\harsh>set path=C:\MinGW\bin
+
+C:\Users\harsh>gcc lex.yy.c
+
+C:\Users\harsh>a
+enter : 1
+Not a mathematical operator
+
