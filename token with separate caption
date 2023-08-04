@@ -1,0 +1,42 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+
+[a-zA-Z]+    {
+    printf("Word: %s\n", yytext);
+}
+
+[0-9]+    {
+    printf("Number: %s\n", yytext);
+}
+
+[^a-zA-Z0-9 \n\t]+    {
+    printf("Special character: %s\n", yytext);
+}
+
+[ \n\t]+   {/* Ignore whitespaces, newlines, and tabs */}
+
+%%
+
+int main(void) {
+    yylex();
+    return 0;
+}
+
+int yywrap(void) {
+    return 1;
+}
+************************************************************************************************************************
+output
+C:\Users\harsh>set path=C:\Program Files (x86)\GnuWin32\bin
+C:\Users\harsh>flex email.l.txt
+C:\Users\harsh>C:\MinGW\bin
+C:\Users\harsh>set path=C:\MinGW\bin
+C:\Users\harsh>gcc lex.yy.c
+C:\Users\harsh>a
+$hethwick98*
+word: hethwick
+number:98
+special characters:$*
